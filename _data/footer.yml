@@ -1,39 +1,24 @@
 - links:
-  - name: Pricing
-    link: /pricing/
+  - name: Docs
+    link: https://docs.langstream.ai
   - name: Blog
     link: /blog/
-  - name: About
-    link: /about/
-  - name: Contact
-    link: /contact/
 - links:
-  - name: Login
-    link: /
-    new_window: true
-  - name: Sign Up
-    link: /
-    new_window: true
-  - name: Docs
-    link: /
-    new_window: true
-  - name: Status
-    link: /
-    new_window: true
 - links:
-  - name: Facebook
-    link: https://facebook.com/cloudcannon/
+  - name: GitHub
+    link: https://github.com/LangStream/langstream
+    social_icon: GitHub
     new_window: true
-    social_icon: Facebook
   - name: Twitter
-    link: https://twitter.com/cloudcannon/
+    link: https://twitter.com/langstream_ai/
     social_icon: Twitter
     new_window: true
-  - name: YouTube
-    link: https://youtube.com/cloudcannon/
-    social_icon: YouTube
+  - name: LinkedIn
+    link: https://www.linkedin.com/company/langstreamai
+    social_icon: LinkedIn
     new_window: true
-  - name: RSS
-    link: /feed.xml
-    social_icon: RSS
-    new_window: false
+  - name: VS Code
+    link: https://marketplace.visualstudio.com/items?itemName=DataStax.langstream
+    social_icon: VisualStudioCode
+    new_window: true
+

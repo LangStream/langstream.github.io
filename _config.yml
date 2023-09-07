@@ -1,24 +1,28 @@
 # ----
 # Site
 
-title: Hydra Template
-url: "https://proud-alligator.cloudvent.net"
-baseurl:
+title: LangStream
 google_analytics_key:
 google_maps_javascript_api_key:
 disqus_shortname:
 
+# GitHub Pages
+
+domain: langstream.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://langstream.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+baseurl: /langstream.github.io/      # place folder name if the site is served in a subfolder
+
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
-logo: /siteicon.png
-description: Product marketing template for Jekyll.
+logo: /favicon.png
+description: Build Gen AI apps
 author:
   name:
   email:
   twitter: # twitter username without the @ symbol
 social:
-  name: Hydra Template
+  name: LangStream
   links:
-    - https://github.com/CloudCannon/hydra-jekyll-template
+    - https://twitter.com/langstream_ai
 
 # -----
 # Build
@@ -86,14 +90,10 @@ exclude:
 
 _select_data:
   social_icons:
-    - Facebook
-    - Instagram
     - LinkedIn
-    - Pinterest
-    - Tumblr
     - Twitter
     - YouTube
-    - RSS
+    - GitHub
 
 _comments:
   map: Update the map location and display settings.

@@ -1,24 +1,16 @@
-- name: Pricing
-  link: /pricing/
-  new_window: false
+
+- name: Docs
+  link: https://docs.langstream.ai
+  new_window: yes
   highlight: false
 - name: Blog
   link: /blog/
   new_window: false
   highlight: false
-- name: About
-  link: /about/
+- name: 
+  link: https://github.com/LangStream/langstream
+  social_icon: GitHub
   new_window: false
   highlight: false
-- name: Contact
-  link: /contact/
-  new_window: false
-  highlight: false
-- name: Login
-  link: /
-  new_window: true
-  highlight: false
-- name: Sign Up
-  link: /
-  new_window: true
-  highlight: true
+
+
