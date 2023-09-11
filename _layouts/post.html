@@ -4,6 +4,10 @@ layout: page
 <div class="blog-post text-container">
 	{% include post-title.html post=page %}
 
+	{%- if page.image -%}
+      <img src="{{- page.image | relative_url -}}" alt="" style="height: 50%; width: 50%; display: block; margin: 0 auto;">
+    {%- endif -%}
+
 	<p class="editor-link"><a href="cloudcannon:collections/{{ page.path }}" class="btn"><strong>&#9998;</strong> Edit Post</a></p>
 	<div class="post-content">
 		{{ content }}
