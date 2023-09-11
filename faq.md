@@ -41,7 +41,7 @@ The LangStream team is active on [Slack](https://join.slack.com/t/langstream/sha
 ## New to LangStream but not GenAI
 
 ### Does LangStream support RAG (retrieval augmented generation) techniques?
-Yes. LLMs work with the knowledge embedded during their training and might not be updated with the latest information.  RAG combines the capabilities of powerful LLMs with external retrieval or database systems, enabling them to pull in up-to-date information or specific facts from vast datasets. LangStream makes it easy to bring all of your data to GenAI. See some examples in our docs here. 
+Yes. LLMs work with the knowledge embedded during their training and might not be updated with the latest information.  RAG combines the capabilities of powerful LLMs with external retrieval or database systems, enabling them to pull in up-to-date information or specific facts from vast datasets. LangStream makes it easy to bring all of your data to GenAI. See some examples in our docs [here](docs.langstream.ai). 
 
 ### My prompt doesn't yield the exact desired response from the LLM what can I try?
 

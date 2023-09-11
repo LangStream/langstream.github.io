@@ -7,6 +7,10 @@
   link: /blog/
   new_window: false
   highlight: false
+- name: FAQ
+  link: /faq/
+  new_window: false
+  highlight: false
 - name: 
   link: https://github.com/LangStream/langstream
   social_icon: GitHub
