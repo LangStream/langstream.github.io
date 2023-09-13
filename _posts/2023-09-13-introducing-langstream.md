@@ -39,7 +39,7 @@ The good news is that there are components that exist to do each of these steps 
 
 ## Declare and deploy
 
-Let’s take a look at a simple LangStream application. Vector databases are a powerful tool for finding relevant data to include in your LLM prompt using semantic search. However, before you can do a semantic search in a vector database, the data that you want to search needs to be first converted into vectors using an embedding model, such as OpenAI’s `text-embedding-ada-002`. Here is a LangSttream file that defines an application to calculate vector embeddings on a stream of text data:
+Let’s take a look at a simple LangStream application. Vector databases are a powerful tool for finding relevant data to include in your LLM prompt using semantic search. However, before you can do a semantic search in a vector database, the data that you want to search needs to be first converted into vectors using an embedding model, such as OpenAI’s `text-embedding-ada-002`. Here is a LangStream file that defines an application to calculate vector embeddings on a stream of text data:
 
 ![Example of LangStream code for embeddings](/images/embeddings-code.png)
 
