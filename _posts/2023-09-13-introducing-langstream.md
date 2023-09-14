@@ -2,7 +2,7 @@
 title: "Introducing LangStream: the easiest way to build streaming Gen AI applications"
 categories: 
 author_staff_member: chris
-image: /images/icon.svg
+image: /images/no-text.png
 date: September 13, 2023
 ---
 Unless you’ve been living under a technology rock, you know that Generative AI is the hottest technology to come around in a while. So-called pundits are comparing it to the introduction of the iPhone, which ushered in the mobile wave, or even the World Wide Web (gasp!).
