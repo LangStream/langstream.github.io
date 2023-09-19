@@ -3,6 +3,16 @@ title: LangStream Changelog
 description: Notes from releases
 ---
 
+### 0.0.20 - Sep 19, 2023
+
+Langstream 0.0.20 new features:
+* Web crawler agent has been improved and it can now works better with sitemaps, robots.txt and other nuances
+* Introduce deletion-mode for assets. Assets can be deleted when the application is deleted.
+* Core improvements like CLI chat output for streaming messages, usage of the OpenAI client
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.0.20](https://github.com/LangStream/langstream/releases/tag/v0.0.20)
+
+
 ### 0.0.19 - Sep 15, 2023
 
 Langstream 0.0.19 new features:
