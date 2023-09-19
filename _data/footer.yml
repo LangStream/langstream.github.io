@@ -5,9 +5,11 @@
     link: /blog/
   - name: FAQ
     link: /faq/
+- links:
+  - name: Resources
+    link: /resources/
   - name: Project Changelog
     link: /changelog/
-- links:
 - links:
   - name: GitHub
     link: https://github.com/LangStream/langstream
