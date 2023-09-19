@@ -3,6 +3,13 @@ title: LangStream Changelog
 description: Notes from releases
 ---
 
+### 0.0.21 - Sep 19, 2023
+
+Langstream 0.0.21 is a maintenance release and contains only core bugfixes about OpenAI client and Cassandra/Astra sink.
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.0.21](https://github.com/LangStream/langstream/releases/tag/v0.0.21)
+
+
 ### 0.0.20 - Sep 19, 2023
 
 Langstream 0.0.20 new features:
