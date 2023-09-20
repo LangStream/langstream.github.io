@@ -6,10 +6,18 @@ description: Frequently Asked Questions
 ## New to Gen AI and LangStream
 
 ### What is LangStream?
-LangStream is an open-source project designed to facilitate the creation of streaming Gen AI applications. It combines event-based architectures with the latest Gen AI technologies. With LangStream, developers can declare their Gen AI components, and it will handle deploying them as a streaming application.
+LangStream is an open-source project designed to facilitate the creation of streaming Gen AI applications. It combines event-based architectures with the latest Gen AI technologies. With LangStream, developers can declare their Gen AI components, and it will handle deploying them as an event-based streaming application.
 
 ### How does LangStream help in the development of Gen AI applications?
 LangStream allows you to build applications that capitalize on Large Language Models (LLMs). It ensures that data from various sources, both static and streaming, is available for constructing high-quality prompts for the LLMs, making the AI response more accurate and contextually relevant.
+
+### How is LangStream different than LangChain or LlamaIndex?
+
+ LangStream is complementary to LangChain and LlamaIndex, but is different in several ways:
+  * Includes a run-time environment for your applications leveraging proven tech like Kubernetes
+  * Is event-driven, which provides advantages around scaling, fault tolerance, and extensibility
+  * Includes no-code, config-driven agents for common tasks, such as calling an embedding model API, in addition to supporting Python agents using LangChain and LlamaIndex
+
 
 ### What are LangStream application agents?
 LangStream application agents operate on event data. They modify or transform this data before passing it on to the next agent in the pipeline. LangStream comes with several pre-built agents for tasks like AI actions, data transformation, text processing, and input/output.

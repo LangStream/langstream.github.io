@@ -22,6 +22,9 @@
 			gtag('js', new Date());
 
 			gtag('config', '{{ site.google_analytics_key }}');
+			{% if site.google_ads_key != '' %}
+			gtag('config', '{{ site.google_ads_key }}');
+			{% endif %}
 			</script>
 		{% endif %}
 	</head>
