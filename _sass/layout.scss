@@ -7,7 +7,6 @@
 .text-container {
 	max-width: 750px;
 }
-
 .container {
 	max-width: 1140px;
 
@@ -36,6 +35,7 @@ header {
 
 	.company-name {
 		font-size: 1.7em;
+		margin-top: 10px;
 		a {
 			display: inline-block;
 		}
@@ -45,6 +45,23 @@ header {
 			width: auto;
 		}
 	}
+	.banner {
+		position: fixed;
+		top: 0px;
+		background-color: #48c7f5;
+		left: 50%;
+		transform: translate(-50%, 0);
+		padding: 2px;
+		text-align: center;
+		width: 100%;
+		z-index: 100;
+		margin-bottom: -17px;
+
+		& svg {
+			margin-bottom: -7px
+		}
+	  }
+	  
 }
 
 .content {
@@ -171,4 +188,7 @@ blockquote:before {
 		}
 	}
 
+
+
 }
+
