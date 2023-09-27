@@ -28,30 +28,58 @@ Suppose we want to use Milvus as a vector database in a LangStream application. 
 
 ```
 resources:
-- type: "vector-database"
-  name: "milvusdatasource"
-  configuration:
-    service: "milvus"
-    clientid: "{{{ secrets.milvus.clientid }}}"
-    secret: "{{{ secrets.milvus.secret }}}"
-    database: "{{{ secrets.milvus.database }}}"
-    environment: "{{{ secrets.milvus.environment }}}"
+  - name: "MilvusDatasource"
+    configuration:
+      service: "milvus"
+      ## OSS Milvus
+      username: "{{{ secrets.milvus.username }}}"
+      password: "{{{ secrets.milvus.password }}}"
+      host: "{{{ secrets.milvus.host }}}"
+      port: "{{{ secrets.milvus.port }}}"
+      ## Set to "upsert" for OSS Milvus, on Zills use "delete-insert"
+      write-mode: "{{{ secrets.milvus.write-mode }}}"
+      ## Zillis
+      url: "{{{ secrets.milvus.url }}}"
+      token: "{{{ secrets.milvus.token }}}"
 ```
 2. Update the secrets.yaml file to include the credentials for the Milvus or Zilliz service
 
     ```
-    milvus:
-        clientid: "YourMilvusClientID"
-        secret: "YourMilvusSecret"
-        database: "YourMilvusDatabase"
-        environment: "YourMilvusEnvironment"
+    - name: milvus
+      id: milvus
+      data:
+        username: ""
+        password: ""
+        host: ""
+        port: ""
+        write-mode: "upsert"  
+        
     ```
 
-Please note: 
-- `clientid` is the client ID provided by your Milvus service.
-- `secret` is the secret provided by your Milvus service.
-- `database` is the database name provided by Milvus.
-- `environment` defines the environment you are working on. 
+In case you are using Zilliz service:
+
+
+    ```
+    - name: milvus
+      id: milvus
+      data:
+        write-mode: "delete-insert"    
+        url: ""
+        token: ""
+
+    ```
+
+If you are on Milvus Cloud you need to set:
+- url: the url of the Milvus Cloud instance (it should be something like https://milvus-cloud-xxxxx.milvuscloud.com)
+- token: the token to use to authenticate
+
+You can find the URL and the token in the Milvus Cloud console.
+
+If you are on OSS Milvus you need to set:
+- username: the username
+- password: the password
+- host: the host
+- port: the port
 
 ## Example: Using Milvus for Querying and Writing Vector Data
 
@@ -60,28 +88,42 @@ With the vector-database configured for Milvus, you're ready to start performing
 Here is how to set up your pipeline for vector querying, assuming the configuration above:
 
 ```
-- name: "execute query"
-  type: "query-vector-db"
-  configuration:
-    datasource: "milvusdatasource"
-    query: |
-    {
-    "vector": ?,
-    "topk": 5,
-    "filter": {
-    "$or": [{"genre": "comedy"}, {"year":2019}]}
-    }
+  - name: "lookup-related-documents-in-llm"
+    type: "query-vector-db"
+    configuration:
+      datasource: "MilvusDatasource"
+      query: |
+        {
+          "collection-name": "docs",
+          "vectors": ?,
+          "top-k": 10,
+          "output-fields": ["text"]
+        }
+      fields:
+        - "value.question_embeddings"
+      output-field: "value.related_documents"
 ```
 
 And this is how you can setup the pipeline for writing vectors:
 
 ```
-- name: "write to milvus"
-  type: "vector-db-sink"
-  input: "input-topic"
-  configuration:
-    datasource: "milvusdatasource"
-    mapping: "id=value.id,description=value.description,name=value.name"
+  - name: "Write to Milvus"
+    type: "vector-db-sink"
+    input: chunks-topic
+    configuration:
+      datasource: "MilvusDatasource"
+      collection-name: "docs"
+      fields:
+        - name: "filename_and_chunkid"
+          expression: "fn:concat(value.filename, value.chunk_id)"
+        - name: "vector"
+          expression: "fn:toListOfFloat(value.embeddings_vector)"
+        - name: "language"
+          expression: "value.language"
+        - name: "text"
+          expression: "value.text"
+        - name: "num_tokens"
+          expression: "value.chunk_num_tokens"
 ```
 
 
