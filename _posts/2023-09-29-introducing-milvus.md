@@ -1,7 +1,7 @@
 ---
 title: Support for Milvus as a Vector Database in LangStream 
 categories:
-image: 
+image: images/milvus_Logo_ee3ae48b61.png
 author_staff_member: chris
 date: September 29, 2023
 ---
