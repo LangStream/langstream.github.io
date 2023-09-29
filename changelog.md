@@ -2,7 +2,7 @@
 title: LangStream Changelog
 description: Notes from releases
 ---
-[Download Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
+[Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 ### 0.0.22 - Sep 27, 2023
 
 Langstream 0.0.22 new features:
