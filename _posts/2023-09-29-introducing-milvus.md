@@ -5,7 +5,7 @@ image: images/milvus_Logo_ee3ae48b61.png
 author_staff_member: chris
 date: September 29, 2023
 ---
-We are happy to announce that as of release 0.0.22 LangStream now supports [Milvus](https://milvus.io){:target="_blank"} as a vector database. This integration broadens LangStream's support for vector databases giving users more flexibility in their Gen AI applications.
+We are happy to announce that as of [release 0.0.22](/changelog) LangStream now supports [Milvus](https://milvus.io){:target="_blank"} as a vector database. This integration broadens LangStream's support for vector databases giving users more flexibility in their Gen AI applications.
 
 Milvus is a popular open-source vector database. It is built for the cloud-native environment and is highly scalable. It supports vector similarity search and provides a wide range of similarity search algorithms. A cloud version of Milvus, called [Zilliz](https://zilliz.com/){:target="_blank"}, is also available.
 
