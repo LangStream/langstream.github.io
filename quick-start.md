@@ -15,7 +15,7 @@ brew install langstream
 ### 2. Set OpenAI key in an environment variable
 
 ```bash
-export OPENAI_API_KEY=your-key-here
+export OPEN_AI_ACCESS_KEY=your-key-here
 ```
 
 ### 3. Start LangStream application using Docker
