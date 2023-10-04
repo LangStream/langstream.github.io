@@ -141,7 +141,7 @@ blockquote:before {
 	overflow: hidden;
 	margin: 25px auto 0 auto;
 	position: relative;
-	border-radius: 200px;
+	// border-radius: 200px;
 
 	img {
 		position: absolute;
@@ -150,7 +150,7 @@ blockquote:before {
 		top: -1000%;
 		bottom: -1000%;
 		margin: auto;
-		width: 300px;
+		width: 150px;
 	}
 }
 
