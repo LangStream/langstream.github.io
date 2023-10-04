@@ -3,6 +3,25 @@ title: LangStream Changelog
 description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
+
+
+### 0.1.0 - Oct 4, 2023
+
+New features:
+
+* **MMR based re-ranking agent**: read more details in the [documentation](https://docs.langstream.ai/pipeline-agents/text-processors/rerank) about the new `re-rank` agent.
+* **API Reference**: all the agents, resources and assets have a new [API Reference](https://docs.langstream.ai/building-applications/api-reference) page.
+* **Default global values**: you can now specify application default values for the global variables.
+* **Embedded Vector Database HerdDB in mini-langstream**: you can run vector-based applications in mini-langstream without the need for an external vector database.
+
+Breaking changes:
+* **Refactor Python agent API**: the Python API is now more handy and structured. Checkout the [documentation](https://docs.langstream.ai/pipeline-agents/custom-agents/python-function) for getting started.
+* **New templating system for globals and secrets**: for referring to a secret you should now use use *${secrets.my-secret.key}* instead of *{{{ secrets.my-secret.key }}}* . Note that the old syntax will continue to work but it's highly recommended to switch to the new one.   
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.1.0](https://github.com/LangStream/langstream/releases/tag/v0.1.0)
+
+
+
 ### 0.0.22 - Sep 27, 2023
 
 Langstream 0.0.22 new features:
