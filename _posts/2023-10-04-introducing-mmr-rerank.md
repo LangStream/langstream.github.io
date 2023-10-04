@@ -1,24 +1,16 @@
 ---
-title: Introducing MMR Re-rank in LangStram
+title: Re-Ranking with Maximal Marginal Relevance in LangStream
 categories:
-author_staff_member: eolivelli
+image: /images/rerank.jpeg
+author_staff_member: enrico
 date: October 4, 2023
 ---
 
-We are happy to announce that as of [release 0.1.0](/changelog) LangStream brings a [re-rank agent](https://docs.langstream.ai/pipeline-agents/text-processors/rerank){:target="_blank"}.
-
-# Re-ranking with Maximal Marginal Relevance in LangStream
-
-When implementing the retrieval augmented generation (RAG) pattern, it’s necessary to query a vector database to get documents related to the input text, and then re-rank the results to get the most relevant ones. This is where the re-rank agent comes in.
-
-The results from the vector database are a list of documents, with each document consisting of a text and a vector of floats. Typically, when you want to retrieve the top n documents, you would filter the results using a query. However, this method can still yield documents that are not relevant to the input text. This is because the query is typically based on the cosine similarity between the input vector and the document vectors.
-
-The re-rank agent allows you to further filter the documents with additional processing to validate that the document is relevant to the input text, and to keep only the most relevant documents. This is especially important when the space available in the prompt for the documents is limited, because there are hard limits on the maximum number of tokens sent to the LLM.
-
+When implementing the retrieval augmented generation (RAG) pattern, it’s necessary to query a vector database to get documents related to the input text and add them to the prompt as context for the LLM. Although the returned documents will be semantically similar to the input text, they may not be the optimal set of documents to add to the prompt. For example, if the set of documents have duplicate content, providing the same document multiple times in the prompt will not improve the result from the LLM. In this case, you want the documents to be similar and diverse. This is where the re-ranking the results comes into play. As of [release 0.1.0](/changelog) LangStream includes a [re-rank agent](https://docs.langstream.ai/pipeline-agents/text-processors/rerank){:target="_blank"} to improve the quality results that are sent to the LLM.
 
 One of the most commonly used algorithms for re-ranking is **maximal marginal relevance** (MMR). The idea behind MMR is to find the most diverse set of documents, while also keeping the most relevant ones. This is achieved by assigning each document a score based on its similarity to the input text, as well as its distance from the documents that have already been selected.
 
-The default implementation of MMR in LangStream is based on the CMU paper “Maximal Marginal Relevance to Re-rank Results in Unsupervised Keyphrase Extraction”. It uses the BM25 algorithm to compute the similarity between the input text and the document text, as well as the cosine similarity between the query vector and the document vector. The BM25 algorithm requires a couple of parameters, k1 and b, which you can configure in the agent.
+The default implementation of MMR in LangStream is based on the CMU paper “[Maximal Marginal Relevance to Re-rank Results in Unsupervised Keyphrase Extraction](https://www.cs.cmu.edu/~jgc/publication/The_Use_MMR_Diversity_Based_LTMIR_1998.pdf)”. It uses the BM25 algorithm to compute the similarity between the input text and the document text, as well as the cosine similarity between the query vector and the document vector. The BM25 algorithm requires a couple of parameters, k1 and b, which you can configure in the agent.
 
 Now, let’s look at an example of how to use the re-rank agent in a LangStream pipeline. Here’s the full pipeline:
 
@@ -69,13 +61,22 @@ The input to the re-rank agent is the “value.related_documents” field from t
 MMR is an algorithm that ranks the retrieved documents using a weighted combination of two criteria: relevance and diversity. The relevance criterion is based on the similarity between the query and the document embeddings, whereas the diversity criterion measures the dissimilarity between the retrieved documents.
 MMR computes a score for each document based on the following formula:
 ```
-score(d) = λ * similarity(query, d) - (1 - λ) * max(similarity(d, di)) for di in retrieved_documents
+score(d) = λ * similarity(query, d)
+           - (1 - λ) * max(similarity(d, di))
+           for di in retrieved_documents
 ```
-where `λ` is a weight that balances the relevance and diversity criteria and `di` is a previously considered document that was already ranked.
+where Lambda (`λ`) is a weight that balances the relevance and diversity criteria and `di` is a previously considered document that was already ranked.
 The formula favors documents that are both similar to the query and dissimilar to the previously considered documents.
+
+There are two parameters to tune BM25 algorithm used to calculate the similarity:
+
+* **k1 - Term Frequency Saturation**: The \(k1\) parameter controls how quickly the term weight reaches saturation. The higher the value of \(k1\), the quicker a term in a document reaches its maximum weight. Common values for \(k1\) range between 1.2 and 2.0.
+
+
+* **b - Length Normalization**: The \(b\) parameter controls the extent to which the BM25 algorithm normalizes term weights by the length of the document. A \(b\) value of 1.0 indicates full normalization, while a value of 0.0 indicates no normalization. Common values for \(b\) usually range around 0.75.
 
 
 ## Conclusion
-Re-ranking is a powerful technique that can significantly improve the quality of search results. n. By using the MMR algorithm, it allows you to filter and rank documents based on their relevance and diversity with respect to the input text. This helps to improve the accuracy and relevance of the final output for the user.
+Re-ranking is a powerful technique that can significantly improve the quality of search results. n. By using the MMR algorithm, it allows you to filter and rank documents based on their relevance and diversity with respect to the input text. This allows for better context to insert in the prompt which leads to better results from the LLM.
 
 Please send us feedback on this new integration or LangStream in general in [Slack](https://join.slack.com/t/langstream/shared_invite/zt-21leloc9c-lNaGLdiecHuWU5N31L2AeQ){:target="_blank"} or [Linen](https://www.linen.dev/invite/langstream){:target="_blank"}. If you find a bug, please open a [GitHub issue](https://github.com/LangStream/langstream/issues){:target="_blank"}.
