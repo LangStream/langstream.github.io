@@ -192,3 +192,44 @@ blockquote:before {
 
 }
 
+.h1-logo {
+	display: inline-block;
+	justify-self: center;
+	align-items: center;
+	height: 150px;
+}
+.logo-slide {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+	margin: 0 auto;
+    height: 100px;  
+	width: 300px;
+	padding: 5px 10px;
+}
+.logo-slide-2 {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+	margin: 0 auto;
+    height: 125px;  
+	width: 300px;
+	padding: 5px 10px;
+}
+.logo-slide > div {
+    flex: 1;
+    text-align: center;
+}
+
+.logo-slide img {
+    max-width: 100%;  /* ensures images don't overflow their container */
+    // height: auto;  /* maintains aspect ratio */
+    vertical-align: middle;  /* aligns image vertically in the middle */
+}
+
+/* If you want to set a specific width for the images, you can use */
+// .logo-slide img {
+//     width: 200px;  /* or whatever size you prefer */
+//     height: 150px;  /* maintains aspect ratio */
+// }
+

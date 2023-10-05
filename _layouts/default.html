@@ -11,7 +11,8 @@
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
 		<link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon.png">
 		<link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
 		{% if jekyll.environment == 'production' and site.google_analytics_key != '' %}
 			<!-- Google tag (gtag.js) -->
@@ -71,6 +72,30 @@
 				document.body.classList.toggle("nav-open");
 				return false;
 			};
+		</script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			$('.logo-slide').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				arrows: false,
+				cssEase: 'linear'
+				
+			});
+			$('.logo-slide-2').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 1000,
+				arrows: false,
+				cssEase: 'linear'
+			});
+			});
 		</script>
 	</body>
 </html>
