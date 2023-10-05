@@ -1,7 +1,7 @@
 # ----
 # Site
 
-title: LangStream
+title: "LangStream: an Event-Driven Developer Platform for LLM Apps"
 google_analytics_key: G-TQ2Z76KVMV
 google_maps_javascript_api_key:
 disqus_shortname:
@@ -20,7 +20,7 @@ twitter:
   card: summary_large_image
 
 logo: /images/logo.svg
-description: Build Gen AI apps
+description: An Event-Driven Developer Platform for LLM Apps
 author:
   name:
   email:
