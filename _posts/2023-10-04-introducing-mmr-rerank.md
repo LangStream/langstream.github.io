@@ -77,6 +77,6 @@ There are two parameters to tune BM25 algorithm used to calculate the similarity
 
 
 ## Conclusion
-Re-ranking is a powerful technique that can significantly improve the quality of search results. n. By using the MMR algorithm, it allows you to filter and rank documents based on their relevance and diversity with respect to the input text. This allows for better context to insert in the prompt which leads to better results from the LLM.
+Re-ranking is a powerful technique that can significantly improve the quality of search results. By using the MMR algorithm, it allows you to filter and rank documents based on their relevance and diversity with respect to the input text. This allows for better context to insert in the prompt which leads to better results from the LLM.
 
 Please send us feedback on this new integration or LangStream in general in [Slack](https://join.slack.com/t/langstream/shared_invite/zt-21leloc9c-lNaGLdiecHuWU5N31L2AeQ){:target="_blank"} or [Linen](https://www.linen.dev/invite/langstream){:target="_blank"}. If you find a bug, please open a [GitHub issue](https://github.com/LangStream/langstream/issues){:target="_blank"}.
