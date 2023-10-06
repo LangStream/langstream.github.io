@@ -14,3 +14,4 @@ description: Links about LangStream
 
 ### In the News
 * [DataStax takes aim at event driven AI with open source LangStream project](https://venturebeat.com/data-infrastructure/datastax-takes-aim-at-event-driven-ai-with-open-source-langstream-project/){:target="_blank"}, **VentureBeat**, September 2023
+* [LangStream: an Event-Driven Developer Platform for LLM Apps](https://thenewstack.io/langstream-an-event-driven-developer-platform-for-llm-apps/){:target="_blank"}, **The New Stack**, October 2023
