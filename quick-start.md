@@ -8,8 +8,7 @@ Getting started on Mac with LangStream is easy. You only need to have [Homebrew]
 ### 1. Install LangStream using Homebrew
 
 ```bash
-brew tap LangStream/langstream
-brew install langstream
+brew install LangStream/langstream/langstream
 ```
 
 ### 2. Set OpenAI key in an environment variable
