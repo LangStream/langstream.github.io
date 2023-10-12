@@ -4,6 +4,20 @@ description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
+### 0.2.0 - Oct 12, 2023
+
+
+New features:
+
+* **Support for FLARE pattern**: FLARE is an emerging pattern, similar to RAG, that iteratively uses a prediction of the upcoming sentence to anticipate future content, which is then utilized as a query to retrieve relevant documents to regenerate the sentence if it contains low-confidence tokens. Read more in the [paper](https://arxiv.org/abs/2305.06983).
+* **New agent 'dispatch'**: you can implement message routing easily by defining condition on the record.
+* **New agent 'http-request'**: run http requests to enrich your data model from any public service or call webhooks when an event happens on the pipeline.
+* **New agent 'azure-blob-storage-source'**: read and process files from Azure Blob Storage containers.
+* **New UI for apps monitoring and testing**: you can now spins up a local UI webserver to monitor and test your application in a friendly way. 
+* **CLI support for Windows**: CLI now is now installable on Windows.
+* **Export your application as Mermaid graph**: run `langstream apps get myapp -o mermaid` to generate a [MermaidJS](https://mermaid.js.org/) graph that shows you the entire application workflow.
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.2.0](https://github.com/LangStream/langstream/releases/tag/v0.2.0)
 
 ### 0.1.0 - Oct 4, 2023
 
