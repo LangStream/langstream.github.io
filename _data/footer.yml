@@ -5,6 +5,8 @@
     link: /blog/
   - name: FAQ
     link: /faq/
+  - name: Quick Start
+    link: /quick-start/
 - links:
   - name: Links
     link: /resources/
