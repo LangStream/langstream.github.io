@@ -1,7 +1,7 @@
 ---
 title: Quick Start  
 description: Getting started with LangStream on Mac
-image: /images/chatbot-us-presidents.gif
+image: /images/chat-with-bot-web-ui.gif
 ---
 Getting started on Mac with LangStream is easy. You need to have [Java](https://www.java.com/en/download/apple.jsp), [Homebrew](https://docs.brew.sh/Installation) and [Docker](https://docs.docker.com/desktop/install/mac-install/) installed. Then follow these steps:
 
