@@ -7,7 +7,6 @@ description: Notes from releases
 
 ### 0.3.0 - Oct 19, 2023
 
-New features:
 
 New features:
 * **Amazon Bedrock Support**: LangStream now works seamlessly with Amazon Bedrock, allowing you to generate embeddings and perform text completions effortlessly.
