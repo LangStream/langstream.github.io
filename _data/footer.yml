@@ -29,4 +29,8 @@
     link: https://marketplace.visualstudio.com/items?itemName=DataStax.langstream
     social_icon: VisualStudioCode
     new_window: true
+  - name: YouTube
+    link: https://www.youtube.com/channel/UCHf16ryqpW3jKLx-b5kvDOw
+    social_icon: YouTube
+    new_window: true
 
