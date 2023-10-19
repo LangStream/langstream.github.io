@@ -4,6 +4,22 @@ description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
+
+### 0.3.0 - Oct 19, 2023
+
+New features:
+
+New features:
+* **Amazon Bedrock Support**: LangStream now works seamlessly with Amazon Bedrock, allowing you to generate embeddings and perform text completions effortlessly.
+* **Expanded Database Support**: Now, you can seamlessly integrate Apache Solr and OpenSearch as Vector Databases. This means you can efficiently index and retrieve embeddings.
+* **Local Hugging Face Model Execution**: Running your favorite Hugging Face model on the LangStream executor is now a breeze. Just a few lines of YAML code and you're good to go.
+* **Flexible SQL Queries for JDBC Databases**: You can now perform both read and write operations on JDBC databases using the new query agent. This adds a new level of flexibility to your pipelines.
+* **New Flow Control Agents**: We've added three new agents - timer-source, trigger-event, and log-event - that help streamline data flow in your pipelines. These agents enhance the precision and control of your workflows.
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.3.0](https://github.com/LangStream/langstream/releases/tag/v0.3.0)
+
+
+
 ### 0.2.0 - Oct 12, 2023
 
 
