@@ -4,6 +4,11 @@ description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
+### 0.3.1 - Oct 20, 2023
+
+Bugfixes:
+* Fix CLI docker run on MacOS and Linux
+
 
 ### 0.3.0 - Oct 19, 2023
 
