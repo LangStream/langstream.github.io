@@ -4,6 +4,20 @@ description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
+### 0.4.0 - Oct 31, 2023
+
+New features:
+* **Full Support for Apache Pulsar**: full-fledged support for Apache Pulsar, enabling seamless integration for the streaming functionality.
+* **Stateful agents**: agents can now provision persistent disks, offering improved data management and persistence capabilities. The `webcrawler-source` now utilizes a persistent disk to store status information, removing the need of a S3 bucket, without impacting the functionalities.
+* **Apache Camel source agents**: you can now run any Apache Camel Source as LangStream source, expanding the range of data sources that can be integrated into the system.
+* **HTTP Gateway**: websocket is great for long-runnnig communication but for simpler use-cases you can now interact with your applications using HTTP directly - and you don't need to redeploy your applications!
+* **LangServe Integration**: a new agent has been added to quickly build integrations with LangServe services (langserve-invoke), supporting the `/invoke` and `/stream` endpoints.
+* **Python development enhancements**: packaging the Python agent dependencies with a simple CLI command and the hot reload on source code changes, will accelerate the development cycle of custom Python agents.
+* **Python service**: deploy a general purpose http service using the new `python-service` agent. Your users will be able to access it leveraging through gateways, inheriting security and high-availability for free.  
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.4.0](https://github.com/LangStream/langstream/releases/tag/v0.4.0)
+
+
 ### 0.3.1 - Oct 20, 2023
 
 Bugfixes:
