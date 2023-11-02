@@ -4,6 +4,15 @@ description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
+### 0.4.1 - Nov 2, 2023
+
+New features:
+* **Full Support for Pravega**: full-fledged support for [Pravega](https://cncf.pravega.io/), enabling seamless integration for the streaming functionality.
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.4.1](https://github.com/LangStream/langstream/releases/tag/v0.4.1)
+
+
+
 ### 0.4.0 - Oct 31, 2023
 
 New features:
