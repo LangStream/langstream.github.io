@@ -5,7 +5,7 @@ description: Links about LangStream
 
 
 ### Project
-* [GitHub Repository](https:github.com/LangStream/langstream){:target="_blank"}
+* [GitHub Repository](https://github.com/LangStream/langstream){:target="_blank"}
 * [Documentation](https://docs.langstream.ai/){:target="_blank"}
 * [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
