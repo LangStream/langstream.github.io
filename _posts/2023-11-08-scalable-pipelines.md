@@ -208,7 +208,7 @@ As you can see the source emits 106 documents and the sink receives 356 record, 
 
 ![Pipeline](/images/pipeline_input_output.png)
 
-In this image you can see the costs of calling the OpenAI embeding service.
+In this image you can see the costs of calling the OpenAI embedding service.
 
 The pipeline executed 96 calls to the OpenAI embedding service to compute embeddings over 356 chunks of text, which means that the system automatically batched the calls to the service.
 In total we sent 128148 tokens to OpenAI.
