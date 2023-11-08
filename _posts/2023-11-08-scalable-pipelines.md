@@ -196,7 +196,7 @@ But if the new version is shorter then you have to deal with the old chunks that
 This is pretty easy to implement in LangStream, as you can see in the example above.
 Each agent can emit metadata that can be used by the next agents in the pipeline.
 
-Therefore agents can emit events to the pipeline or trigger actions in other pipelines to deal with the changes in the documents, although this is not needed in this case.
+Agents can additionally emit events to the pipeline, or trigger actions in other pipelines to deal with changes in the documents.
 
 ## Metrics
 
