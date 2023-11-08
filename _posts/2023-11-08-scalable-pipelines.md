@@ -164,7 +164,7 @@ Using LangStream's streaming bus and Kubernetes, you can tune your pipeline and 
 - implement micro-batching
 - control failures and retry
 - scale horizontally to increase throughput
-- you can request to execute the agents on more powerful machines (e.g. with GPUs or more memory)
+- request to execute agents on more powerful machines (e.g. with GPUs or more memory)
 
 All of the feature can be tuned indepenently for each agent in the pipeline.
 
