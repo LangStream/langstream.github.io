@@ -147,7 +147,7 @@ The size of the chunk is computed using the function `cl100k_base` that is the s
 
 ## Computing embeddings
 
-When it is time to compute the embeddings you have two ways: call an external service or compute the vector locally.
+There are two ways to compute embeddings: call an external service or compute the vector locally.
 If you call an external service, then you have to take into account a few things:
 
 - the service is a remote service, so you have to take into account the latency and network failures
