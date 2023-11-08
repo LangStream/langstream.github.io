@@ -142,7 +142,7 @@ This operation is CPU-intensive and may require some amount of memory, depending
 
 There are hard constraints on the number of tokens that the LLM can process, and what qualifies as a token depends on the algorithm used by the LLM.
 With LangStream you can split the text into chunks of a given size. The `text-splitter` agent splits the text into chunks and emits a document for each chunk.
-The algorimh selected in the example is the RecursiveCharacterTextSplitter, which splits the text into chunks of a given size, and then splits each chunk into smaller chunks of the same size, until the chunk size is less than the given size.
+The algorithm selected in the example is the RecursiveCharacterTextSplitter, which splits the text into chunks of a given size, and then splits each chunk into smaller chunks of the same size, until the chunk size is less than the given size.
 The size of the chunk is computed using the function `cl100k_base` that is the same used by OpenAI and measures the number of tokens in the chunk.
 
 ## Computing embeddings
