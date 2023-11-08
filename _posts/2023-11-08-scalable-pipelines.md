@@ -151,7 +151,7 @@ There are two ways to compute embeddings: call an external service or compute th
 If you call an external service, then you have to take into account a few things:
 
 - the service is a remote service, so you have to account for latency and network failures
-- most services allow to perform batch operations, so you can send multiple requests in a single call
+- most services allow batch operations, so you can send multiple requests in a single call
 - you can usually send multiple requests in parallel
 - this operation is IO bound, and you don't need much CPU or memory locally
 
