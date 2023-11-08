@@ -190,7 +190,7 @@ In the example above we are writing the chunks to a documents table, and you hav
 - the new version of the document is shorter
 
 
-If the new version is longer then it is easy as the new chunks will override the old ones.
+If the new version of the document is longer, then it is no problem, as the new chunks will override the old chunks.
 But if the new version is shorter then you have to deal with the old chunks that are not part of the new version, and this is pretty easy to do as you can delete the chunks with an id that is greater than the number of chunks in the new version of the document.
 
 This is pretty easy to implement in LangStream, as you can see in the example above.
