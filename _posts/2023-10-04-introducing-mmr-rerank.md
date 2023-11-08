@@ -1,9 +1,9 @@
 ---
-title: Re-Ranking with Maximal Marginal Relevance in LangStream
+title: Building Scalable Vectorisation pipelines in LangStream
 categories:
 image: /images/rerank.jpeg
 author_staff_member: enrico
-date: October 4, 2023
+date: November 9, 2023
 ---
 
 When implementing the retrieval augmented generation (RAG) pattern, it’s necessary to query a vector database to get documents related to the input text and add them to the prompt as context for the LLM. Although the returned documents will be semantically similar to the input text, they may not be the optimal set of documents to add to the prompt. For example, if the set of documents have duplicate content, providing the same document multiple times in the prompt will not improve the result from the LLM. In this case, you want the documents to be similar and diverse. This is where the re-ranking the results comes into play. As of [release 0.1.0](/changelog) LangStream includes a [re-rank agent](https://docs.langstream.ai/pipeline-agents/text-processors/rerank){:target="_blank"} to improve the quality results that are sent to the LLM.
