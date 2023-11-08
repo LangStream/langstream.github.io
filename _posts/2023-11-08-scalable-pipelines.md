@@ -6,7 +6,7 @@ author_staff_member: enrico
 date: November 8, 2023
 ---
 
-The most fundamental component of retrieval augmented generation (RAG) based application is your data.
+The most fundamental component of a retrieval augmented generation (RAG)-based application is your data.
 You store your data in a vector database as documents and query it to retrieve the most relevant documents for a given input text.
 
 A typical pipeline that brings your data to the vector database is like this:
