@@ -155,7 +155,7 @@ If you call an external service, then you have to take into account a few things
 - you can usually send multiple requests in parallel
 - this operation is IO-bound, and you don't need much CPU or memory locally
 
-In case you use the local machine for computing the embeddings than the problem is different:
+Computing embeddings on your local machine creates a different set of challenges:
 - you need machines with powerful CPUs or GPUs to compute the embeddings
 - you may want to scale horizontally to increase the throughput
 
