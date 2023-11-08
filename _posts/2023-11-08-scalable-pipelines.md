@@ -204,7 +204,7 @@ It is important to monitor the performance of your pipeline, and LangStream prov
 Metrics are exported to Prometheus and you can use Grafana to visualise them.
 
 This is the result of running the vectorization pipeline over a corpus of HTML documents.
-As you can see the source emits 106 documents and the sink receives 356 record, that means that each document has been split into 3 chunks on average.
+As you can see the source emits 106 documents and the sink receives 356 records, which means that each document has been split into 3 chunks on average.
 
 ![Pipeline](/images/pipeline_input_output.png)
 
