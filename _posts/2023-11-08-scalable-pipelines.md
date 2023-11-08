@@ -1,9 +1,9 @@
 ---
-title: Building Scalable Vectorisation pipelines in LangStream
+title: Building Scalable Vectorization Pipelines in LangStream
 categories:
-image: /images/vectors.jpeg
+image: /images/vectorization-pipeline.png
 author_staff_member: enrico
-date: November 9, 2023
+date: November 8, 2023
 ---
 
 The most fundamental component of retrieval augmented generation (RAG) based application is your data.
@@ -18,7 +18,7 @@ A typical pipeline that brings your data to the vector database is like this:
 - Clean up obsolete data from the vector database
 
 
-Now, let’s look at an example of how to use the re-rank agent in a LangStream pipeline. Here’s the full pipeline:
+Now, let’s look at an example of all these steps in a LangStream pipeline:
 
 ```yaml
 name: "Extract and manipulate text"
@@ -113,13 +113,13 @@ pipeline:
 ```
 
 
-Let's see all the key components of this pipeline.
+Let's look at all the key components of this pipeline.
 
-## Assets
+## Assets
 
 LangStream allows you to define assets that can be used by the pipeline. Assets are stored in the LangStream database and can be shared across pipelines. Assets can be of different types, such as JDBC tables, Cassandra Keyspaces, Milvus collections, etc.
 
-When you deploy your application the LangStream runtime will create the assets if they don't exist yet, and when you uninstall the application the assets will be deleted.
+When you deploy your application the LangStream runtime will create the assets if they don't exist yet, and when you uninstall the application the assets will be deleted. These behaviors can be configured using the `creation-mode` and `deletion-mode` parameters.
 
 ## Reading from an S3 Bucket
 
@@ -134,7 +134,7 @@ This is an IO intensive operation, but it normally doesn't use much compute reso
 
 ## Extracting the text
 
-From the documents that are emitted by the source we extract the text using the `text-extractor` agent. This agent uses the Apache Tika library to extract the text from the document. The text is stored in a field called `value.text` together with other metadata, store in the `properties` of the record.
+From the documents that are emitted by the source we extract the text using the `text-extractor` agent. This agent uses the Apache Tika library to extract the text from the document. The text is stored in a field called `value.text` together with other metadata, which is stored in the `properties` of the record.
 
 This operation is CPU intensive and it may require some amount of memory, depending on the size of the documents.
 
@@ -143,7 +143,7 @@ This operation is CPU intensive and it may require some amount of memory, depend
 There are hard constraints on the number of tokens that the LLM can process. An what is a token depends on the algorithm used by the LLM.
 With LangStream you can split the text into chunks of a given size. The `text-splitter` agent splits the text into chunks and emits a document for each chunk.
 The algorimh selected in the example is the RecursiveCharacterTextSplitter, which splits the text into chunks of a given size, and then splits each chunk into smaller chunks of the same size, until the chunk size is less than the given size.
-The size of the chunk is computed using the function `cl100k_base` that is the same used by OpenAI.
+The size of the chunk is computed using the function `cl100k_base` that is the same used by OpenAI and measures the number of tokens in the chunk.
 
 ## Computing embeddings
 
@@ -156,7 +156,7 @@ If you call an external service, then you have to take into account a few things
 - this operation is IO bound, and you don't need much CPU or memory locally
 
 In case you use the local machine for computing the embeddings than the problem is different:
-- you need machines with GPUs to compute the embeddings
+- you need machines with powerful CPUs or GPUs to compute the embeddings
 - you may want to scale horizontally to increase the throughput
 
 With LangStream, thanks to the streaming bus and to Kubernetes you can tune your pipeline and application at runtime and address all of the problems above:
@@ -172,8 +172,8 @@ Some interesting characteristics of the pipeline above are:
 
 - dealing with network failure to the external service is independent from writing to the vector database
 - the size of batches sent to the external service in independent from the size of the batches written to the vector database
-- the machines uses to compute embeddings can be different from the ones who perform text extration and manipulation
-- each step in the pipiline can be recovered independently and you don't need to replay the whole pipeline in case of failures (this will save you probably a lot of money)
+- the machines uses to compute embeddings can be different from the ones who perform text extraction and manipulation
+- each step in the pipeline can be recovered independently and you don't need to replay the whole pipeline in case of failures (this could save you probably a lot of money if you are working with large data sets)
 
 ## Writing to the vector database
 
@@ -184,14 +184,14 @@ LangStream deals automatically with failures and retries, and it guarantees at-l
 
 ## Dealing with document updates
 
-Another important fact to take into consideration in a vectorisation pipeline is that the documents may change over time.
+Another important fact to take into consideration in a vectorization pipeline is that the documents may change over time.
 In the example above we are writing the chunks to a documents table, and you have two main cases:
 - the new version is longer
 - the new version of the document is shorter
 
 
 If the new version is longer then it is easy as the new chunks will override the old ones.
-But if the new version is shorter then you have to deal with the old chunks that are not part of the new version, and this is pretty easy to do as you can delete the chunks with an id that is greater than the number of chunks in the new version.
+But if the new version is shorter then you have to deal with the old chunks that are not part of the new version, and this is pretty easy to do as you can delete the chunks with an id that is greater than the number of chunks in the new version of the document.
 
 This is pretty easy to implement in LangStream, as you can see in the example above.
 Each agent can emit metadata that can be used by the next agents in the pipeline.
@@ -203,25 +203,25 @@ Therefore agents can emit events to the pipeline or trigger actions in other pip
 It is important to monitor the performance of your pipeline, and LangStream provides a set of metrics that you can use to monitor the performance of your pipeline.
 Metrics are exported to Prometheus and you can use Grafana to visualise them.
 
-This is the result of running the vectorisation pipeline over a corpus of HTML documents.
+This is the result of running the vectorization pipeline over a corpus of HTML documents.
 As you can see the source emits 106 documents and the sink receives 356 record, that means that each document has been split into 3 chunks on average.
 
-![Pipeline](../images/pipeline_input_output.png)
+![Pipeline](/images/pipeline_input_output.png)
 
 In this image you can see the costs of calling the OpenAI embeding service.
 
 The pipeline executed 96 calls to the OpenAI embedding service, to compute embeddings over 356 chunks of text, that means that the system automatically batched the calls to the service.
 In total we sent 128148 tokens to OpenAI.
 
-![OpenAI costs](../images/pipeline_openai_grafana.png)
+![OpenAI costs](/images/pipeline_openai_grafana.png)
 
 With a streaming pipeline like this you could tune the batch size, and the parallelism of the calls to the OpenAI embeddings service in order to tune the pipeline.
 
 
 ## Conclusion
 
-Writing scalable vectorisation pipelines is not easy, but with LangStream you can focus on the business logic and let LangStream deal with the rest.
+Writing scalable vectorization pipelines is not easy, but with LangStream you can focus on the business logic and let LangStream deal with the rest.
 With an event-driven architecture you can scale your pipelines horizontally and you can tune the throughput of each agent independently.
 
 
-Please send us feedback on this new integration or LangStream in general in [Slack](https://join.slack.com/t/langstream/shared_invite/zt-21leloc9c-lNaGLdiecHuWU5N31L2AeQ){:target="_blank"} or [Linen](https://www.linen.dev/invite/langstream){:target="_blank"}. If you find a bug, please open a [GitHub issue](https://github.com/LangStream/langstream/issues){:target="_blank"}.
+Please send us feedback in [Slack](https://join.slack.com/t/langstream/shared_invite/zt-21leloc9c-lNaGLdiecHuWU5N31L2AeQ){:target="_blank"} or [Linen](https://www.linen.dev/invite/langstream){:target="_blank"}. If you find a bug, please open a [GitHub issue](https://github.com/LangStream/langstream/issues){:target="_blank"}.
