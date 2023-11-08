@@ -180,7 +180,7 @@ Some interesting characteristics of the pipeline above are:
 With LangStream you can connect natively to the most popular vector databases, from Astra DB to Milvus, from OpenSearch to Cassandra, from Pinecone to Elasticsearch.
 But you can also leverage the Apache Kafka Connect ecosystem to integrate with your favourite vector database.
 
-LangStream deals automatically with failures and retries, and it guarantees at-least once processing of each chunk and it is able to perform micro-batching to increase the throughput.
+LangStream deals automatically with failures and retries, guarantees at-least once processing of each chunk, and is able to perform micro-batching to increase throughput.
 
 ## Dealing with document updates
 
