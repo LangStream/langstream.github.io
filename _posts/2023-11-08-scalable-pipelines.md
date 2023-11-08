@@ -136,7 +136,7 @@ This is an IO intensive operation, but it normally doesn't use much compute reso
 
 From the documents that are emitted by the source we extract the text using the `text-extractor` agent. This agent uses the Apache Tika library to extract the text from the document. The text is stored in a field called `value.text` together with other metadata, which is stored in the `properties` of the record.
 
-This operation is CPU intensive and it may require some amount of memory, depending on the size of the documents.
+This operation is CPU-intensive and may require some amount of memory, depending on the size of the documents.
 
 ## Text splitting
 
