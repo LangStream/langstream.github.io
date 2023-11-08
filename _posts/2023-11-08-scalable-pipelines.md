@@ -162,7 +162,7 @@ Computing embeddings on your local machine creates a different set of challenges
 Using LangStream's streaming bus and Kubernetes, you can tune your pipeline and application at runtime and address all of the problems above:
 
 - implement micro-batching
-- you can deal with failures and retry
+- control failures and retry
 - you can scale horizontally to increase the throughput
 - you can request to execute the agents on more powerful machines (e.g. with GPUs or more memory)
 
