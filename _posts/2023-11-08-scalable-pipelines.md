@@ -1,7 +1,7 @@
 ---
 title: Building Scalable Vectorisation pipelines in LangStream
 categories:
-image: /images/rerank.jpeg
+image: /images/vectors.jpeg
 author_staff_member: enrico
 date: November 9, 2023
 ---
@@ -206,16 +206,16 @@ Metrics are exported to Prometheus and you can use Grafana to visualise them.
 This is the result of running the vectorisation pipeline over a corpus of HTML documents.
 As you can see the source emits 106 documents and the sink receives 356 record, that means that each document has been split into 3 chunks on average.
 
-![Pipeline](image-1.png)
+![Pipeline](../images/pipeline_input_output.png)
 
 In this image you can see the costs of calling the OpenAI embeding service.
 
 The pipeline executed 96 calls to the OpenAI embedding service, to compute embeddings over 356 chunks of text, that means that the system automatically batched the calls to the service.
 In total we sent 128148 tokens to OpenAI.
 
-![OpenAI costs](image.png)
+![OpenAI costs](../images/pipeline_openai_grafana.png)
 
-With a streaming pipeline like this you could tune the batch size, and the parallelism of the calls to the OpenAI embeddings service in order to tune the throughput and the cost of the pipeline.
+With a streaming pipeline like this you could tune the batch size, and the parallelism of the calls to the OpenAI embeddings service in order to tune the pipeline.
 
 
 ## Conclusion
