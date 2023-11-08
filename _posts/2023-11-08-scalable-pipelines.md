@@ -130,7 +130,7 @@ Even if the document is split into chunks down the pipeline, LangStream will gua
 the source is notified and the document is marked as processed.
 This way, even if you have a failure in the middle of the pipeline and you have to restart, the source will only emit the documents that have not been processed yet. This allows you to deal with failures and restarts.
 
-This is an IO intensive operation, but it normally doesn't use much compute resources.
+This is an IO-intensive operation, but it normally doesn't use much compute resources.
 
 ## Extracting the text
 
