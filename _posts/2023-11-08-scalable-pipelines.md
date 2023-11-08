@@ -221,7 +221,7 @@ With a streaming pipeline like this you could tune the batch size, and the paral
 ## Conclusion
 
 Writing scalable vectorization pipelines is not easy, but with LangStream you can focus on the business logic and let LangStream deal with the rest.
-With an event-driven architecture you can scale your pipelines horizontally and you can tune the throughput of each agent independently.
+With an event-driven architecture you can scale your pipelines horizontally and tune the throughput of each agent independently.
 
 
 Please send us feedback in [Slack](https://join.slack.com/t/langstream/shared_invite/zt-21leloc9c-lNaGLdiecHuWU5N31L2AeQ){:target="_blank"} or [Linen](https://www.linen.dev/invite/langstream){:target="_blank"}. If you find a bug, please open a [GitHub issue](https://github.com/LangStream/langstream/issues){:target="_blank"}.
