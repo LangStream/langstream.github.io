@@ -186,7 +186,7 @@ LangStream deals automatically with failures and retries, guarantees at-least on
 
 Another important fact to take into consideration in a vectorization pipeline is that the documents may change over time.
 In the example above we are writing the chunks to a documents table, and you have two main cases:
-- the new version is longer
+- the new version of the document is longer
 - the new version of the document is shorter
 
 
