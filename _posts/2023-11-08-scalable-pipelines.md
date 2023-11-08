@@ -166,7 +166,7 @@ Using LangStream's streaming bus and Kubernetes, you can tune your pipeline and 
 - scale horizontally to increase throughput
 - request to execute agents on more powerful machines (e.g. with GPUs or more memory)
 
-All of the feature can be tuned indepenently for each agent in the pipeline.
+All of the features can be tuned independently for each agent in the pipeline.
 
 Some interesting characteristics of the pipeline above are:
 
