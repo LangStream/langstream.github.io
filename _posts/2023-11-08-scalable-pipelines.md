@@ -159,7 +159,7 @@ Computing embeddings on your local machine creates a different set of challenges
 - you need machines with powerful CPUs or GPUs to compute the embeddings
 - you may want to scale horizontally to increase the throughput
 
-With LangStream, thanks to the streaming bus and to Kubernetes you can tune your pipeline and application at runtime and address all of the problems above:
+Using LangStream's streaming bus and Kubernetes, you can tune your pipeline and application at runtime and address all of the problems above:
 
 - you can implement micro-batching
 - you can deal with failures and retry
