@@ -128,7 +128,7 @@ LangStream handles recovery automatically and guarantees at-least once processin
 
 Even if the document is split into chunks down the pipeline, LangStream will guarantee that when all the chunks of a document have been written to the vector database
 the source is notified and the document is marked as processed.
-This way even if you have a failure in the middle of the pipeline, when you restart the pipeline the source will only emit the documents that have not been processed yet. This allows you to deal with failures and with restarts.
+This way, even if you have a failure in the middle of the pipeline and you have to restart, the source will only emit the documents that have not been processed yet. This allows you to deal with failures and restarts.
 
 This is an IO intensive operation, but it normally doesn't use much compute resources.
 
