@@ -150,7 +150,7 @@ The size of the chunk is computed using the function `cl100k_base` that is the s
 There are two ways to compute embeddings: call an external service or compute the vector locally.
 If you call an external service, then you have to take into account a few things:
 
-- the service is a remote service, so you have to take into account the latency and network failures
+- the service is a remote service, so you have to account for latency and network failures
 - most services allow to perform batch operations, so you can send multiple requests in a single call
 - you can usually send multiple requests in parallel
 - this operation is IO bound, and you don't need much CPU or memory locally
