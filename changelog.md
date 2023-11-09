@@ -15,6 +15,13 @@ Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.4.
 
 ### 0.4.0 - Oct 31, 2023
 
+**Breaking change:**
+Before upgrading the LangStream cluster to 0.4.x, you must update the Custom Resource, just run: 
+
+```
+kubectl apply -f https://github.com/LangStream/langstream/releases/download/v0.4.0/agents.langstream.ai-v1.yml
+```
+
 New features:
 * **Full Support for Apache Pulsar**: full-fledged support for Apache Pulsar, enabling seamless integration for the streaming functionality.
 * **Stateful agents**: agents can now provision persistent disks, offering improved data management and persistence capabilities. The `webcrawler-source` now utilizes a persistent disk to store status information, removing the need of a S3 bucket, without impacting the functionalities.
