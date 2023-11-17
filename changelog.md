@@ -4,6 +4,14 @@ description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
+### 0.4.4 - Nov 17, 2023
+
+New features:
+* **Support for Ollama**: you can now leverage [OLLama](https://ollama.ai/) to run the model locally to the LangStream executor.
+* **App lifecycle improvements**: we improved the status handling when the application fails the deployment. Also it's now possible to force-delete the application at any time!
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.4.4](https://github.com/LangStream/langstream/releases/tag/v0.4.4)
+
 ### 0.4.1 - Nov 2, 2023
 
 New features:
@@ -19,7 +27,8 @@ Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.4.
 Before upgrading the LangStream cluster to 0.4.x, you must update the Custom Resource, just run: 
 
 ```
-kubectl apply -f https://github.com/LangStream/langstream/releases/download/v0.4.0/agents.langstream.ai-v1.yml
+kubectl apply -f https://github.com/LangStream/langstream/releases/download/v0.4.4/agents.langstream.ai-v1.yml
+kubectl apply -f https://github.com/LangStream/langstream/releases/download/v0.4.4/applications.langstream.ai-v1.yml
 ```
 
 New features:
