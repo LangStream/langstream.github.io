@@ -17,6 +17,10 @@
     link: https://github.com/LangStream/langstream
     social_icon: GitHub
     new_window: true
+  - name: Slack
+    link: https://langstream.slack.com/ssb/redirect
+    social_icon: Slack
+    new_window: true
   - name: Twitter
     link: https://twitter.com/langstream_ai/
     social_icon: Twitter
