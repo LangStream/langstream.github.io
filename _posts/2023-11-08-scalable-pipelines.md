@@ -21,6 +21,7 @@ A typical pipeline that brings your data to the vector database is like this:
 Now, let’s look at an example of all these steps in a LangStream pipeline:
 
 ```yaml
+{% raw %}
 name: "Extract and manipulate text"
 assets:
   - name: "documents-table"
@@ -110,6 +111,7 @@ pipeline:
           expression: "value.text"
         - name: "num_tokens"
           expression: "value.chunk_num_tokens"
+{% endraw %}
 ```
 
 

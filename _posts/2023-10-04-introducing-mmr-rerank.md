@@ -15,6 +15,7 @@ The default implementation of MMR in LangStream is based on the CMU paper “[Ma
 Now, let’s look at an example of how to use the re-rank agent in a LangStream pipeline. Here’s the full pipeline:
 
 ```yaml
+{% raw %}
 pipeline:
 - name: “convert-to-structure”
  type: “document-to-json”
@@ -50,6 +51,7 @@ pipeline:
   lambda: 0.5
   k1: 1.2
   b: 0.75
+{% endraw %}
 ```
 
 Let’s break it down. We start by converting the input document to a JSON structure using the `convert-to-structure` agent. Next, we compute the embeddings of the input text using the `compute-ai-embeddings` agent and store them in a field called “value.question_embeddings”. We then use the `query-vector-db` agent to query the vector database for the top 20 documents related to the input text, and store them in a field called “value.related_documents”.
