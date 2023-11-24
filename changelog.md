@@ -4,7 +4,7 @@ description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
-### 0.4.4 - Nov 24, 2023
+### 0.5.0 - Nov 24, 2023
 
 New features:
 * **DataStax AstraDB collections**: it's now possible to leverage the AstraDB collections to simplify the vector databases management directly in LangStream.
