@@ -4,6 +4,17 @@ description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
+### 0.5.0 - Nov 24, 2023
+
+New features:
+* **DataStax AstraDB vector support**: it's now possible to leverage the AstraDB through the new [JSON API](https://www.datastax.com/blog/introducing-the-new-json-api-for-astra-db) to simplify the vector databases management directly in LangStream.
+* **Enhanced Python custom agents**: we added support for async function, message producing to a side topic and other stability improvements! 
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.5.0](https://github.com/LangStream/langstream/releases/tag/v0.5.0)
+
+
+
+
 ### 0.4.4 - Nov 17, 2023
 
 New features:
