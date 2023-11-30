@@ -100,7 +100,7 @@ New features:
 
 Breaking changes:
 * **Refactor Python agent API**: the Python API is now more handy and structured. Checkout the [documentation](https://docs.langstream.ai/pipeline-agents/custom-agents/python-function) for getting started.
-* **New templating system for globals and secrets**: for referring to a secret you should now use use *${secrets.my-secret.key}* instead of *{{{ secrets.my-secret.key }}}* . Note that the old syntax will continue to work but it's highly recommended to switch to the new one.   
+* **New templating system for globals and secrets**: for referring to a secret you should now use use `${secrets.my-secret.key}` instead of `{% raw %}{{{ secrets.my-secret.key }}}{% endraw %}` . Note that the old syntax will continue to work but it's highly recommended to switch to the new one.   
 
 Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.1.0](https://github.com/LangStream/langstream/releases/tag/v0.1.0)
 
