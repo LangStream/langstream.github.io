@@ -1,8 +1,8 @@
 ---
 title: "Unpacking LangStream's Event-Driven Architecture"
 categories:
-image: /image/blog/article-15-icon.png
-author_staff_member: "LangStream"
+image: /images/blog/article-15-icon.png
+author_staff_member: langstream
 date: November 22, 2023
 ---
 
@@ -29,7 +29,7 @@ The LangStream platform coordinates all this complex activity automatically. If 
 
 The following image shows LangStream's event-driven architecture. As a producer generates events, the event queue picks them up and dispatches them to various services for processing. These services might update a vector database or trigger an AI model to respond. As the application state changes, these events enter the event queue for processing.
 
-![LangStream Flow](../images/blog/article-15-flow-diagram.png "LangStream-Flow")
+![LangStream Flow](/images/blog/article-15-flow-diagram.png "LangStream-Flow")
 
 ### Real-Time Data Processing in LangStream
 
@@ -97,7 +97,7 @@ LangStream's event-driven architecture, on the other hand, helps applications re
 
 Let's compare the two approaches in the following table.
 
-![LangStream Benefits Chart](../images/blog/article-15-chart.png "LangStream-Benefits-Chart")
+![LangStream Benefits Chart](/images/blog/article-15-chart.png "LangStream-Benefits-Chart")
 
 Let's delve deeper into these advantages to highlight how LangStream's event-driven architecture can help develop and deploy AI applications rapidly.
 
