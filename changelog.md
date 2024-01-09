@@ -4,6 +4,14 @@ description: Notes from releases
 ---
 [Releases](https://github.com/LangStream/langstream/releases){:target="_blank"}
 
+### 0.6.0 - Jan 8, 2024
+
+Improvements:
+* **Runtime LangChain version updated**: LangChain has been updated to version 0.0.353, this means you can use all their new features out of the box. Check them out in the [LangChain release notes](https://github.com/langchain-ai/langchain/releases)
+
+Full release notes: [https://github.com/LangStream/langstream/releases/tag/v0.6.0](https://github.com/LangStream/langstream/releases/tag/v0.6.0)
+
+
 ### 0.5.0 - Nov 24, 2023
 
 New features:
